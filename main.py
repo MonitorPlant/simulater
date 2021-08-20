@@ -5,14 +5,19 @@ import numpy as np
 from matplotlib import pyplot as plt
 from matplotlib import animation
 
+import move
+
 
 def _update(frame, x, y):
     """グラフを更新するための関数"""
     # 現在のグラフを消去する
     plt.cla()
+    move.update_coord(frame)
     # データを更新 (追加) する
-    x.append(frame)
-    y.append(math.sin(frame))
+    # x.append(frame)
+    x.append(move.get_x())
+    # y.append(math.sin(frame))
+    y.append(move.get_y())
     # 折れ線グラフを再描画する
     plt.plot(x, y)
 

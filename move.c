@@ -11,11 +11,11 @@ basic_coord basic = {0, 0, 0};
 
 basic_coord update(float time)
 {
-	basic_coord tmp = {
-		sinf(time) * 6.7,
-		cosf(time) * 6.7,
-		time * 0.4
-	};
+	basic_coord tmp = {};
+
+	tmp.x = sinf(time) * 2500;
+	tmp.y = cosf(time) * 2500;
+	tmp.yaw = time * 0.4;
 
 	return tmp;
 }
